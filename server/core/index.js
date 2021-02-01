@@ -17,6 +17,13 @@ const {
 class Application {
   constructor() {
     this.$app = new Koa();
+    this.$app.use(async (ctx, next) => {
+      await next();
+      console.log(ctx.fresh);
+      if (ctx.fresh) {
+        ctx.status = 304;
+      }
+    });
     // 注册默认内置中间件
     this.initDefaultMiddleware();
 
@@ -41,9 +48,6 @@ class Application {
     this.$app.use(async (ctx, next) => {
       this.ctx = ctx;
       await next();
-      if (ctx.fresh) {
-        ctx.status = 304;
-      }
     });
 
     this.$app.use(this.$router.routes());
