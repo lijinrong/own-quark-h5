@@ -41,6 +41,9 @@ class Application {
     this.$app.use(async (ctx, next) => {
       this.ctx = ctx;
       await next();
+      if (ctx.fresh) {
+        ctx.status = 304;
+      }
     });
 
     this.$app.use(this.$router.routes());
