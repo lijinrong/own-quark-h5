@@ -49,7 +49,7 @@
         </div>
       </div>
       <!--翻页方式-->
-      <div class="info-form-wrapper">
+      <div class="info-form-wrapper" v-if="pageData.pageMode === 'h5'">
         <div class="info-form-l com-width">翻页方式：</div>
         <div class="info-form-r">
           <el-select v-model="pageData.flipType">
@@ -60,7 +60,7 @@
         </div>
       </div>
       <!--翻页方式-->
-      <div class="info-form-wrapper">
+      <div class="info-form-wrapper" v-if="pageData.pageMode === 'h5'">
         <div class="info-form-l com-width"></div>
         <div class="info-form-r">
           <el-checkbox v-model="pageData.slideNumber">显示页码</el-checkbox>

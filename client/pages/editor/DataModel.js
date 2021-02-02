@@ -9,7 +9,7 @@ let elementConfig = {
 		position: 'absolute',
 		width: $config.canvasH5Width,
 		height: 30,
-		top: 200,
+		top: 0,
 		left: 0,
 		rotate: 0,
 		paddingTop: 0,
