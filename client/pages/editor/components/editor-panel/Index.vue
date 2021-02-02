@@ -30,8 +30,8 @@
               getCommonStyle({
                 width: item.commonStyle.width,
                 height: item.commonStyle.height,
-                left: item.commonStyle.top,
-                top: item.commonStyle.left,
+                left: item.commonStyle.left,
+                top: item.commonStyle.top,
                 position:
                   projectData.pageMode === 'h5'
                     ? item.commonStyle.position
